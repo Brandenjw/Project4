@@ -13,7 +13,7 @@ const bodySchema = mongoose.Schema({
 let BioCollection = mongoose.model("bios", bodySchema);
 
 // Fuction to get all bodies
-function getAllBody() {
+function getAllBodies() {
     //using mongoose to get all Images
     return BodyCollection.find();
 }
@@ -43,7 +43,7 @@ function deleteBodyById(bodyId) {
 
 // calls all established functions to be exported
 module.exports = {
-    getAllBody,
+    getAllBodies,
     createNewBody,
     getBodyById,
     updateBodyById,

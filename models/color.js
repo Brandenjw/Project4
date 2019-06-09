@@ -13,7 +13,7 @@ const colorSchema = mongoose.Schema({
 let ColorCollection = mongoose.model("color", colorSchema);
 
 // Fuction to get all bodies
-function getAllColor() {
+function getAllColors() {
     //using mongoose to get all Images
     return ColorCollection.find();
 }
@@ -43,7 +43,7 @@ function deleteColorById(colorId) {
 
 // calls all established functions to be exported
 module.exports = {
-    getAllColor,
+    getAllColors,
     createNewColor,
     getColorById,
     updateColorById,
