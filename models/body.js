@@ -3,8 +3,8 @@ const mongoose = require("../DB/connection");
 
 const bodySchema = mongoose.Schema({
   //object that defines the type of values for each key
+  Id: String,
   Name: String,
-  Description: String,
   Price: Number
   
   
