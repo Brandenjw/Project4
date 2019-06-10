@@ -1,13 +1,27 @@
 const express = require("express");
 const app = express();
 
-app.use(express.static(__dirname + "/client/build/"));
+//calling all established functions in respective APIs
+const bodyApi = require('./models/bodyApi.js');
+const colorApi = require('./models/colorApi.js');
+const wheelApi = require('./models/wheelApi.js')
+
+app.use(logger('dev'))
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Linking CSS
+app.use('/public', express.static("public"))
+app.use(express.static(`${__dirname}/client/build`))
+
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/client/build/index.html");
 });
 
-app.use(express.json());
+
+
+
 app.get("/", (req, res) => {
   res.send("Hello world!");
 });
