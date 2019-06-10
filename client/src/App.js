@@ -4,17 +4,17 @@ import {BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 import Home from './components/homeComp';
 import Land from './components/landingComp';
-// import Bodies from './components/bodyComp';
+import Bodies from './components/bodyComp';
 import Colors from './components/colorComp';
 import Wheels from './components/wheelComp';
+import styled from "styled-components";
 
-// import styled from "styled-components";
 
-// const Title = styled.h1`
-// color: black;
-// text-align: center;
-// font-size: 38px;
-// `
+const Title = styled.h1`
+color: black;
+text-align: center;
+font-size: 38px;
+`
 
 
 
