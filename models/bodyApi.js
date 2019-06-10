@@ -11,7 +11,7 @@ const bodySchema = mongoose.Schema({
   
 });
 //creating an API that will take the "Image" collection in mongodb
-let BioCollection = mongoose.model("bios", bodySchema);
+let BioCollection = mongoose.model("body", bodySchema);
 
 // Fuction to get all bodies
 function getAllBodies() {
