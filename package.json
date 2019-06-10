@@ -8,7 +8,7 @@
     "dev": "concurrently \"node server.js\" \"cd client && npm start\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "cd client && npm i && npm run build"
-  },  
+  },
   "engines": {
     "node": "8.12.0"
   },
@@ -28,6 +28,7 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.5.13",
-    "node": "8.12.0"
+    "node": "8.12.0",
+    "styled-components": "^4.3.1"
   }
 }
