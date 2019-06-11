@@ -24,16 +24,16 @@ class App extends Component {
       <Router>
         <div>
           Im Branden's react App
-          <Switch>
+           {/* <Switch>
             <Route exact path="/landing" component={Land}/>
             <Route exact path="/home" component={Home}/> 
-            {/* <Route exact path="/body/id" component={Bodies}/> */}
+             <Route exact path="/body/id" component={Bodies}/> 
             <Route exact path="/color/:id" component={Colors}/>
-            <Route exact path="/wheel/:id" component={Wheels}/>
+            <Route exact path="/wheel/:id" component={Wheels}/> 
             
             <title>Stanced World</title>
             
-          </Switch>
+          </Switch> */}
         </div>
       </Router>
     )

@@ -60,21 +60,21 @@ app.delete("/api/body/:bodyId", (req, res) => {
 // COLOR MODEL//
 ///////////////////////
 
-app.get("/color", (req, res) => {
+app.get("/api/color", (req, res) => {
   colorApi.getAllColors().then(color => {
     res.send(color);
   });
 });
 
 // Posting a new COLOR (img)
-app.post("/color", (req, res) => {
+app.post("/api/color", (req, res) => {
   colorApi.createNewColor(req.body).then(color => {
     res.send(Color);
   });
 });
 
 // Deleting a COLOR Image
-app.delete("/color/:colorId", (req, res) => {
+app.delete("/api/color/:colorId", (req, res) => {
   colorApi.deleteColorById(req.params.colorId).then(() => {
     res.send(200);
   });
