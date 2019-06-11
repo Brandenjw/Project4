@@ -4,7 +4,7 @@ const app = express();
 
 //calling all established functions in respective APIs
 const bodyApi = require("./models/bodyApi.js");
-// const colorApi = require("./models/colorApi.js");
+const colorApi = require("./models/colorApi.js");
 // const wheelApi = require('./models/wheelApi.js')
 
 // app.use(logger('dev'))
@@ -60,7 +60,7 @@ app.delete("/api/body/:bodyId", (req, res) => {
 // COLOR MODEL//
 ///////////////////////
 
-app.get("/api/color", (req, res) => {
+app.get("/api/color/:colorId", (req, res) => {
   colorApi.getAllColors().then(color => {
     res.send(color);
   });
@@ -69,7 +69,7 @@ app.get("/api/color", (req, res) => {
 // Posting a new COLOR (img)
 app.post("/api/color", (req, res) => {
   colorApi.createNewColor(req.body).then(color => {
-    res.send(Color);
+    res.send(color);
   });
 });
 

@@ -12,23 +12,23 @@ const colorSchema = mongoose.Schema({
 //creating an API that will take the "Image" collection in mongodb
 let ColorCollection = mongoose.model("color", colorSchema);
 
-// Fuction to get all bodies
+// Fuction to get all colors
 function getAllColors() {
-    //using mongoose to get all Images
+    //using mongoose to get all 
     return ColorCollection.find();
 }
 
-// Function to create new Body 
+// Function to create new color 
 function createNewColor(newColorData){
     return ColorCollection.create(newColorData);
 }
 
-// Function to get Body by Id
+// Function to get color by Id
 function getColorById(colorId) {
     return ColorCollection.findById(colorId);
 }
 
-// Function to update Body
+// Function to update color
 function updateColorById(colorId, color) {
     return ColorCollection.findByIdAndUpdate({ _id: colorId }, color);
     

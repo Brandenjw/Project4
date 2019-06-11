@@ -1,4 +1,4 @@
-const Bio = require('../models/colorApi.js')
+const  = require('../models/colorApi.js')
 
 
 
