@@ -5,7 +5,7 @@ const app = express();
 //calling all established functions in respective APIs
 const bodyApi = require("./models/bodyApi.js");
 const colorApi = require("./models/colorApi.js");
-// const wheelApi = require('./models/wheelApi.js')
+const wheelsApi = require('./models/wheelsApi.js')
 
 // app.use(logger('dev'))
 app.use(express.urlencoded({ extended: true }));
@@ -83,22 +83,22 @@ app.delete("/api/color/:colorId", (req, res) => {
 // WHEEL MODEL//
 /////////////////////////
 
-app.get("/wheel", (req, res) => {
-  wheelApi.getAllWheels().then(wheel => {
+app.get("/api/wheel/:wheelId", (req, res) => {
+  wheelsApi.getAllWheels().then(wheel => {
     res.send(wheel);
   });
 });
 
 // Posting a new Wheel (img)
-app.post("/wheel", (req, res) => {
-  wheelApi.createNewWheel(req.body).then(wheel => {
+app.post("/api/wheel", (req, res) => {
+  wheelsApi.createNewWheel(req.body).then(wheel => {
     res.send(wheel);
   });
 });
 
 // Deleting a Wheel Image
-app.delete("/wheel/:wheelId", (req, res) => {
-  wheelApi.deleteWheelById(req.params.wheelId).then(() => {
+app.delete("/api/wheel/:wheelId", (req, res) => {
+  wheelsApi.deleteWheelById(req.params.wheelId).then(() => {
     res.send(200);
   });
 });
