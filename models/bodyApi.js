@@ -11,7 +11,7 @@ const bodySchema = mongoose.Schema({
   
 });
 //creating an API that will take the "Image" collection in mongodb
-let BioCollection = mongoose.model("body", bodySchema);
+let BodyCollection = mongoose.model("body", bodySchema);
 
 // Fuction to get all bodies
 function getAllBodies() {
@@ -20,7 +20,7 @@ function getAllBodies() {
 }
 
 // Function to create new Body 
-function createNewBody(newBodyData){
+function createNewBodies(newBodyData){
     return BodyCollection.create(newBodyData);
 }
 
@@ -45,7 +45,7 @@ function deleteBodyById(bodyId) {
 // calls all established functions to be exported
 module.exports = {
     getAllBodies,
-    createNewBody,
+    createNewBodies,
     getBodyById,
     updateBodyById,
     deleteBodyById,
