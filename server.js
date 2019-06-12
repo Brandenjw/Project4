@@ -27,6 +27,13 @@ app.get("/", (req, res) => {
 //  BODY MODEL
 //////////////
 
+app.get("/api/body/", (req, res) => {
+  bodyApi.getAllBodies()
+  .then(body => {
+    res.send(body);
+  });
+});
+
 app.get("/api/body/:bodyId", (req, res) => {
   bodyApi.getAllBodies()
   .then(body => {
