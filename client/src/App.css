@@ -31,3 +31,24 @@
     transform: rotate(360deg);
   }
 }
+.bodyImage{
+background-color: blue;
+height: 30px;
+width: 300px;
+text-align: center;
+color: white;
+display: flex;
+justify-content: center;
+
+}
+.floor{
+  height: 300px;
+  width: 100vw;
+}
+.form{
+  color: black;
+}
+
+.label{
+  color:black;
+}
