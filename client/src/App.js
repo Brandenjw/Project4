@@ -5,21 +5,40 @@ import './App.css';
 // import Home from './components/homeComp';
 // import Land from './components/landingComp';
 import bodyComp from './components/bodyComp';
-// import Colors from './components/colorComp';
+import colorComp from './components/colorComp';
 // import Wheels from './components/wheelComp';
 // import styled from "styled-components";
 
 
-// const title = styled.h1`
-// color: black;
-// text-align: center;
-// font-size: 38px;
-// `
+
 
 
 
 class App extends Component {
+ 
+
+  var colorSelect = new colorSelect(".colorSelect", {
+    
+    width: 300,
+    color: "rgb(255, 0, 0)",
+    borderWidth: 1,
+    borderColor: "#fff",
+  });
+  
+  var values = document.getElementById("values");
+  
+  colorSelect.on(["color:init", "color:change"], function(color){
+  
+    values.innerHTML = [
+      "hex: " + color.hexString,
+      "rgb: " + color.rgbString,
+      "hsl: " + color.hslString,
+    ].join("<br>");
+  });
+
+  
   render () {
+    
     return (
       <Router>
         <div>
@@ -28,8 +47,8 @@ class App extends Component {
             {/* <Route exact path="/landing" component={Land}/>
             <Route exact path="/home" component={Home}/>  */}
              <Route exact path="/body" component={bodyComp}/> 
-            {/* <Route exact path="/color/:id" component={Colors}/>
-            <Route exact path="/wheel/:id" component={Wheels}/>  */}
+            <Route exact path="/color" component={colorComp}/>
+            {/* <Route exact path="/wheel/:id" component={Wheels}/>  */}
             
             
           </Switch> }

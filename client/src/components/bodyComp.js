@@ -44,19 +44,19 @@ background-repeat:no-repeat; */
   border: solid red;
 `;
 //body display box
-const Content4 = styled.section`
-  width: 700px;
-  background-color: white;
-  position: absolute;
-  width: 500px;
-  height: 200px;
-  z-index: 15;
-  /* top: 60%;
-  bottom: 40%;
-  left: 42%;
-  margin: -100px 0 0 -150px; */
-  color: black;
-`;
+// const Content4 = styled.section`
+//   width: 700px;
+//   background-color: white;
+//   position: absolute;
+//   width: 500px;
+//   height: 200px;
+//   z-index: 15;
+//   /* top: 60%;
+//   bottom: 40%;
+//   left: 42%;
+//   margin: -100px 0 0 -150px; */
+//   color: black;
+// `;
 const Content5 = styled.section`
   display: flex;
   justify-content: center;
@@ -66,12 +66,12 @@ const Content5 = styled.section`
   border: solid blue;
   text-align: center;
 `;
-const Content6 = styled.section`
-  background-color: black;
-  width: 100vw;
-  height: 100px;
-  border: solid blue;
-`;
+// const Content6 = styled.section`
+//   background-color: black;
+//   width: 100vw;
+//   height: 100px;
+//   border: solid blue;
+// `;
 
 class bodyComp extends Component {
   state = {
@@ -124,6 +124,7 @@ class bodyComp extends Component {
     axios.delete(`/api/body/${bodyId}`);
     this.getAllBodies();
   };
+ 
 
   render() {
     const bodyStyle = {
@@ -136,7 +137,7 @@ class bodyComp extends Component {
             <Title2>BETA MODE</Title2>
             <Title> Stanced World </Title>
             <Title1>Design your very own stanced vehicle</Title1>
-            <div className="bodyImage">Hello</div>
+            {/* <div className="bodyImage">Hello</div> */}
           </Content>
           {this.state.bodies.map(body => {
             return (
@@ -216,7 +217,7 @@ class bodyComp extends Component {
         <div className="floor">
         
         </div>
-
+        
         <div class="sharethis-inline-share-buttons" />
       </Content2>
     );

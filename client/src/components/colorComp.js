@@ -3,7 +3,6 @@ import axios from "axios";
 // import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-
 const Title = styled.h1`
   color: red;
   text-align: center;
@@ -12,8 +11,8 @@ const Title = styled.h1`
   box-shadow: 0px 0px 80px white;
 `;
 const Title1 = styled.h1`
-  color: black;
-  text-align: right;
+  color: white;
+  text-align: center;
   font-size: 34px;
 `;
 const Content2 = styled.section`
@@ -24,75 +23,89 @@ const Content2 = styled.section`
 `;
 
 class Color extends Component {
-    state = {
-      bodies: [],
-      newBody: {
-        id: "",
-        color: "",
-        price: ""
-        
-      },
-      isBodiesFormDisplayed: false
-    };
+  state = {
+    colors: [],
+    newColor: {
+      id: "",
+      color: "",
+      price: ""
+    },
+    isBodiesFormDisplayed: false
+  };
 
-    getAllColors = () => {
-        axios.get("/color").then(res => {
-          console.log(res.data);
-          this.setState({ color: res.data });
-        });
-      };
-      componentDidMount = () => {
-        this.getAllColors();
-      };
-      toggleColorsForm = () => {
-        this.setState((state, props) => {
-          return { isColorsFormDisplayed: !state.isColorsFormDisplayed };
-        });
-      };
-      handleChange = e => {
-        const cloneNewColors = { ...this.state.newColor };
-        cloneNewColors[e.target.name] = e.target.value;
-        console.log(cloneNewColors);
-        this.setState({ newColor: cloneNewColors });
-      };
-    
-      createColor = e => {
-        e.preventDefault();
-        axios.post("/color", this.state.newColor);
-        this.getAllColors();
-      };
-      deleteColor = colorId => {
-        axios.delete(`/color/${colorId}`);
-        this.getAllColors();
-      };
+  getAllColors = () => {
+    axios.get("/color").then(res => {
+      console.log(res.data);
+      this.setState({ color: res.data });
+    });
+  };
+  componentDidMount = () => {
+    this.getAllColors();
+  };
+  toggleColorsForm = () => {
+    this.setState((state, props) => {
+      return { isColorsFormDisplayed: !state.isColorsFormDisplayed };
+    });
+  };
+  handleChange = e => {
+    const cloneNewColors = { ...this.state.newColor };
+    cloneNewColors[e.target.name] = e.target.value;
+    console.log(cloneNewColors);
+    this.setState({ newColor: cloneNewColors });
+  };
 
+  createColor = e => {
+    e.preventDefault();
+    axios.post("/color", this.state.newColor);
+    this.getAllColors();
+  };
+  deleteColor = colorId => {
+    axios.delete(`/color/${colorId}`);
+    this.getAllColors();
+  };
 
-      render() {
-        return (
-          <Content2>
+  render() {
+    return (
+      <div className="page">
+        <Content2>
+          <div>
+            <Title> Stanced World </Title>
+            <Title1>Design your very own stanced vehicle</Title1>
+            {this.state.colors.map(color => {
+              return (
+                <div>
+                  {color.Id}
+                  {color.Color}
+                  {color.Price}
+                  <button
+                    onClick={() => {
+                      this.deleteColor(color._id);
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
+              );
+            })}
             <div>
-              <Title> Stanced World </Title>
-              <Title1>Design your very own stanced vehicle</Title1>
-              {this.state.color.map(color => {
-            return (
-              <div>
-                {color.Id}
-                {color.Color}
-                {color.Price}
-                <button
-                  onClick={() => {
-                    this.deleteColor(color._id);
-                  }}
-                >
-                  Delete
-                </button>
-              </div>
-            );
-          })}
-        </div>
-      </Content2>
+              <body>
+                <div class="wrap">
+                  <div className="half">
+                    <div class="colorSelect" />
+                  </div>
+                  <div class="half readout">
+                    <span class="title">Body Color:</span>
+                    <div id="values" />
+                  </div>
+                </div>
+              </body>
+            </div>
+          </div>
+          <div class="sharethis-inline-share-buttons" />
+        </Content2>
+      </div>
     );
   }
 }
 
-export default Color;      
+export default Color;

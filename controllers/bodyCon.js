@@ -1,4 +1,4 @@
-const Bio = require('../models/bodyApi.js')
+const body = require('../models/bodyApi.js')
 
 
 
