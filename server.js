@@ -6,6 +6,9 @@ const app = express();
 const bodyApi = require("./models/bodyApi.js");
 const colorApi = require("./models/colorApi.js");
 const wheelsApi = require('./models/wheelsApi.js')
+const unirest = require('unirest');
+const axios = require('axios');
+
 
 // app.use(logger('dev'))
 app.use(express.urlencoded({ extended: true }));
@@ -26,6 +29,17 @@ app.get("/", (req, res) => {
 
 //  BODY MODEL
 //////////////
+
+app.get("/api/weather", (req, res) => {
+  axios.get("https://community-open-weather-map.p.rapidapi.com/weather?id=2172797&units=%22metric%22+or+%22imperial%22&mode=json%2C+html&q=Atlanta,USA",
+  {headers: {
+    "X-RapidAPI-Host": "community-open-weather-map.p.rapidapi.com",
+    "X-RapidAPI-Key": process.env.PROJECT_4_API_KEY
+  }}).then(result => {
+    res.send(result.data)
+  })
+})
+
 
 app.get("/api/body/", (req, res) => {
   bodyApi.getAllBodies()

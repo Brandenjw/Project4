@@ -11,30 +11,31 @@ import colorComp from './components/colorComp';
 
 
 
-
-
-
 class App extends Component {
- 
-
-  var colorSelect = new colorSelect(".colorSelect", {
+  
+  // function colorSelect(params) {
     
-    width: 300,
-    color: "rgb(255, 0, 0)",
-    borderWidth: 1,
-    borderColor: "#fff",
-  });
+  //   let colorSelect = new colorSelect(".colorSelect", {
+      
+  //     width: 300,
+  //     color: "rgb(255, 0, 0)",
+  //   borderWidth: 1,
+  //   borderColor: "#fff",
+  // });
   
-  var values = document.getElementById("values");
+  // let values = document.getElementById("values");
   
-  colorSelect.on(["color:init", "color:change"], function(color){
-  
-    values.innerHTML = [
-      "hex: " + color.hexString,
-      "rgb: " + color.rgbString,
-      "hsl: " + color.hslString,
-    ].join("<br>");
-  });
+  // colorSelect.on(["color:init", "color:change"], function(color){
+    
+  //   values.innerHTML = [
+  //     "hex: " + color.hexString,
+  //     "rgb: " + color.rgbString,
+  //     "hsl: " + color.hslString,
+  //   ].join("<br>");
+  // });
+  // }
+    
+
 
   
   render () {
@@ -56,7 +57,9 @@ class App extends Component {
         </div>
       </Router>
     )
-  }
+}
+
+
 }
 
 export default App;
