@@ -5,7 +5,8 @@ const wheelSchema = mongoose.Schema({
   //object that defines the type of values for each key
   Name: String,
   Description: String,
-  Price: Number
+  Price: Number,
+  Image: String
   
   
 });
@@ -25,7 +26,7 @@ function createNewWheel(newWheelData){
 
 // Function to get Wheel by Id
 function getWheelById(wheelId) {
-    return BodyCollection.findById(bodyId);
+    return wheelCollection.findById(bodyId);
 }
 
 // Function to update Wheel

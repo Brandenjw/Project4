@@ -6,7 +6,7 @@ import './App.css';
 // import Land from './components/landingComp';
 import bodyComp from './components/bodyComp';
 import colorComp from './components/colorComp';
-// import Wheels from './components/wheelComp';
+import wheelComp from './components/wheelComp';
 // import styled from "styled-components";
 
 
@@ -49,7 +49,7 @@ class App extends Component {
             <Route exact path="/home" component={Home}/>  */}
              <Route exact path="/body" component={bodyComp}/> 
             <Route exact path="/color" component={colorComp}/>
-            {/* <Route exact path="/wheel/:id" component={Wheels}/>  */}
+            <Route exact path="/wheel" component={wheelComp}/>  
             
             
           </Switch> }

@@ -113,3 +113,9 @@ body {
   margin-top: 16px;
   
 }
+.weather{
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  width: 100vw;
+}
