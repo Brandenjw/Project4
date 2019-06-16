@@ -101,7 +101,7 @@ class Color extends Component {
               </body>
             </div>
           </div>
-          <div class="sharethis-inline-share-buttons" />
+          {/* <div class="sharethis-inline-share-buttons" /> */}
         </Content2>
       </div>
     );

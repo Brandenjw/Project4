@@ -190,7 +190,7 @@ class wheelComp extends Component {
         <div className="weather">
         {this.state.weather && <div>{this.state.weather.name} <br></br> {this.state.weather.weather[0].description} </div>}
         </div>
-        <div class="sharethis-inline-share-buttons" />
+        {/* <div class="sharethis-inline-share-buttons" /> */}
       </Content2>
     );
   }
