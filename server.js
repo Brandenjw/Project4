@@ -18,10 +18,6 @@ app.use(express.json());
 app.use("/public", express.static("public"));
 app.use(express.static(`${__dirname}/client/build`));
 
-app.get("/*", (req, res) => {
-  res.sendFile(__dirname + "/client/build/index.html");
-});
-
 //  BODY MODEL
 //////////////
 
@@ -117,6 +113,10 @@ app.delete("/api/wheel/:wheelId", (req, res) => {
   wheelsApi.deleteWheelById(req.params.wheelId).then(() => {
     res.send(200);
   });
+});
+
+app.get("/*", (req, res) => {
+  res.sendFile(__dirname + "/client/build/index.html");
 });
 
 const PORT = process.env.PORT || 3001;
