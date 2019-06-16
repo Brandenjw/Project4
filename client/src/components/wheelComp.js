@@ -33,9 +33,7 @@ const Content = styled.div`
 //   background-color: blue;
 // `;
 const Content2 = styled.section`
- /* background-image: );
-background-size: cover;
-background-repeat:no-repeat; */
+ 
   height: 100vh;
   width: 100vw;
   text-align: center;

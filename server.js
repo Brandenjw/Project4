@@ -95,7 +95,7 @@ app.delete("/api/color/:colorId", (req, res) => {
 // WHEEL MODEL//
 /////////////////////////
 
-app.get("/api/wheel/:wheelId", (req, res) => {
+app.get("/api/wheel", (req, res) => {
   wheelsApi.getAllWheels().then(wheel => {
     res.send(wheel);
   });
