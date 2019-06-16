@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 });
 
 //homepage rendering
-app.get("/", (req, res) => {
+app.get("/body", (req, res) => {
   res.send("Hello world!");
 });
 
