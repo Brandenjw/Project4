@@ -1,4 +1,4 @@
-const mongoose = require("../DB/connection");
+const mongoose = require("../db/connection");
 
 
 const wheelSchema = mongoose.Schema({
