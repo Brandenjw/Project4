@@ -142,7 +142,7 @@ class bodyComp extends Component {
           {this.state.bodies.map(body => {
             return (
               <div>
-                {/* <Content4>hello</Content4>   */}
+                
                 <Content5>
                   {body.Name}
                   {body.Price}
