@@ -28,14 +28,8 @@ const Content = styled.div`
   margin-left: 90px;
   text-align: center;
 `;
-// const Content1 = styled.div`
-//   border: solid red;
-//   background-color: blue;
-// `;
+
 const Content2 = styled.section`
- /* background-image: );
-background-size: cover;
-background-repeat:no-repeat; */
   height: 100vh;
   width: 100vw;
   text-align: center;
@@ -43,20 +37,7 @@ background-repeat:no-repeat; */
   font-size: 30px;
   border: solid red;
 `;
-//body display box
-// const Content4 = styled.section`
-//   width: 700px;
-//   background-color: white;
-//   position: absolute;
-//   width: 500px;
-//   height: 200px;
-//   z-index: 15;
-//   /* top: 60%;
-//   bottom: 40%;
-//   left: 42%;
-//   margin: -100px 0 0 -150px; */
-//   color: black;
-// `;
+
 const Content5 = styled.section`
   display: flex;
   justify-content: center;
@@ -66,12 +47,7 @@ const Content5 = styled.section`
   border: solid blue;
   text-align: center;
 `;
-// const Content6 = styled.section`
-//   background-color: black;
-//   width: 100vw;
-//   height: 100px;
-//   border: solid blue;
-// `;
+
 
 class bodyComp extends Component {
   state = {
@@ -132,12 +108,19 @@ class bodyComp extends Component {
     };
     return (
       <Content2>
+       <div className="bodyNav">
+              <ul id="nav">
+                 <li><a href="/api/color">Color</a></li>
+                 <li><a href="/api/wheel">Wheels</a></li>
+                 <li><a href="/">Home</a></li>
+               </ul>
+             </div>
         <div>
           <Content>
             <Title2>BETA MODE</Title2>
             <Title> Stanced World </Title>
             <Title1>Design your very own stanced vehicle</Title1>
-            {/* <div className="bodyImage">Hello</div> */}
+           
           </Content>
           {this.state.bodies.map(body => {
             return (
@@ -163,9 +146,9 @@ class bodyComp extends Component {
                     Update
                   </button>
                 </Content5>
-                {/* <Content1>Hello Ag</Content1> */}
+                
 
-                {/* <Content6 /> */}
+                
               </div>
             );
           })}
@@ -207,12 +190,7 @@ class bodyComp extends Component {
               <button>New Car Body</button>
             </form>
 
-          {/* <select id="body-select">
-            <option value="">--Please choose an option--</option>
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
-          </select> */}
+      
         </div>
         <div className="floor">
         
