@@ -1,52 +1,18 @@
-.App {
-  text-align: center;
+@font-face{
+  font-family: 'cars';
+  src: url("/fonts/MARSNEVENEKSK-Regular.otf");
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-/* .bodyImage{
-background-color: blue;
-height: 30px;
-width: 300px;
-text-align: center;
-color: white;
-display: flex;
-justify-content: center;
-
-} */
 .floor{
   height: 300px;
   width: 100vw;
 }
 .form{
   color: black;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  padding-bottom: 20px;
 }
 
 .label{
@@ -63,6 +29,10 @@ justify-content: center;
   height: 100%;
   width: 100vw;
 }
+.bodyContain{
+  display: flex;
+  flex-direction: column;
+}
 
 
 
@@ -70,8 +40,12 @@ justify-content: center;
 
 body {
   color: #fff;
-  background: #171F30;
+  background: blue;
   line-height: 150%;
+  background: url("/images/back.jpg");
+background-size: 100% 100%;
+height: 100vh;
+width: 100vw;
 }
 
 
@@ -97,6 +71,7 @@ body {
   line-height: 24px;
   display: block;
   padding: 8px 0;
+  color: white;
 }
 
 .readout {
@@ -120,7 +95,7 @@ body {
   width: 100vw;
 }
 #nav {
-  width: 100%;
+  width: 100vw;
   float: left;
   margin: 0 0 3em 0;
   padding: 0;
@@ -136,3 +111,65 @@ body {
   font-weight: bold;
   color: #069;
   border-right: 1px solid #ccc; } 
+
+  .homePic{
+    background: url("/images/charlie-larkman-1434060-unsplash.jpg");
+    background-size: 100% 100%;
+    /* background-repeat: no-repeat; */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+  }
+  .head{
+    text-align: center;
+    color: black;
+    font-size: 100px;
+    font-family: 'cars';
+    align-items: center;
+    -webkit-text-stroke: 0.05px white;
+  }
+
+  .starter{
+    text-align: center;
+    color: white;
+    font-family:  'cars';
+    font-size: 50px;
+  }
+  .link{
+    color: white;
+  }
+
+  
+ 
+  li a{
+    
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    /* text-decoration: none; */
+    color: inherit;
+    font-size: 17px;
+    font-size: 24px;
+    list-style-type: none;
+}
+
+ul{
+  list-style-type: none;
+}
+.Content2{
+background: url("/images/back.jpg");
+background-size: 100% 100%;
+height: 100vh;
+width: 100vw;
+
+}
+*{
+  text-decoration: none;
+  color: inherit;
+}
+    
+  

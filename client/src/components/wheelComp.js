@@ -110,6 +110,13 @@ class wheelComp extends Component {
     };
     return (
       <Content2>
+        <div className="bodyNav">
+              <ul id="nav">
+                 <li><a href="/body">Body</a></li>
+                 <li><a href="/color">Color</a></li>
+                 <li><a href="/">Home</a></li>
+               </ul>
+             </div>
         <div>
           <Content>
             <Title2>BETA MODE</Title2>

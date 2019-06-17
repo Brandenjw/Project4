@@ -1,13 +1,24 @@
-// import React, { Component } from "react";
-// import axios from "axios";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
+class homeComp extends Component {
+    state = {
+        home: [],
+        
+        }
 
 
+render() {
+    return (
+        <div className="homePic">
+        <h1 className="head">Stanced World</h1>
+        <div className="starter">
+    <Link className="link" to="/body">Start</Link>
+    </div>
+    </div>
+    
+    )}
 
-// render() {
-//     return (
-//         <div className="starter">
-//     <div className="homeLink">
-//         <a href="/api/body">link text</a>
-//     </div>
-//     </div>
-//     )}
+}
+
+export default homeComp;

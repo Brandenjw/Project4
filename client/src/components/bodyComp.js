@@ -6,22 +6,21 @@ import styled from "styled-components";
 
 
 const Title = styled.h1`
-  color: red;
+  color: white;
   text-align: center;
   font-size: 70px;
   text-decoration: underline;
   box-shadow: 0px 0px 80px white;
+  font-family: 'cars';
+  display: flex;
+  flex-direction: column;
 `;
 const Title1 = styled.h1`
   color: red;
   text-align: center;
   font-size: 34px;
 `;
-const Title2 = styled.h1`
-  color: yellow;
-  text-align: center;
-  font-size: 34px;
-`;
+
 const Content = styled.div`
   background-repeat: no-repeat;
   padding-right: 90px;
@@ -29,23 +28,42 @@ const Content = styled.div`
   text-align: center;
 `;
 
-const Content2 = styled.section`
-  height: 100vh;
-  width: 100vw;
+const Button = styled.button`
+  color:black;
+  background-color: grey;
+  font-size: 18px;
   text-align: center;
-  color: white;
-  font-size: 30px;
-  border: solid red;
+  margin: 0 auto;
+  display: block;
 `;
 
+
+
+
+
 const Content5 = styled.section`
-  display: flex;
-  justify-content: center;
+display: flex;
+  /* justify-content: center; */
   height: 50px;
   width: 100vw;
-  background-color: black;
-  border: solid blue;
-  text-align: center;
+color: black;
+  
+  
+  /* text-align: center; */
+`;
+
+const Div1 = styled.div`
+color:black;
+padding-top: 10px;
+`;
+const Div2 = styled.div`
+color:black;
+padding-top: 10px;
+`;
+const Div3 = styled.div`
+color:black;
+padding-top: 10px;
+padding-bottom:15px;
 `;
 
 
@@ -107,25 +125,25 @@ class bodyComp extends Component {
       height: "200px"
     };
     return (
-      <Content2>
-       <div className="bodyNav">
-              <ul id="nav">
-                 <li><a href="/api/color">Color</a></li>
-                 <li><a href="/api/wheel">Wheels</a></li>
+      <div  className="Content2, bodyContain">
+       <div className="Nav">
+              <ul id="bodyNav">
+                 <li><a href="/color">Color</a></li>
+                 <li><a href="/wheel">Wheels</a></li>
                  <li><a href="/">Home</a></li>
                </ul>
              </div>
-        <div>
+        <div >
           <Content>
-            <Title2>BETA MODE</Title2>
+            
             <Title> Stanced World </Title>
             <Title1>Design your very own stanced vehicle</Title1>
            
           </Content>
           {this.state.bodies.map(body => {
             return (
-              <div>
-                
+              <div  >
+              
                 <Content5>
                   {body.Name}
                   {body.Price}
@@ -152,22 +170,21 @@ class bodyComp extends Component {
               </div>
             );
           })}
-          <label className="label" for="body-select">Choose a body:</label>
 
           <form className="form" onSubmit={this.createBody}>
-              <div>
                 <label htmlFor="Name"> Name of Car</label>
-                <textarea
+              <Div1>
+                <input
                   id="Name"
                   type="text"
                   name="Name"
                   onChange={this.handleChange}
                   value={this.state.newBody.Name}
                 />
-              </div>
+              </Div1>
               <br></br>
-              <div>
                 <label htmlFor="Price">Price of Car</label>
+              <Div2>
                 <input
                   id="Price"
                   type="text"
@@ -175,20 +192,22 @@ class bodyComp extends Component {
                   onChange={this.handleChange}
                   value={this.state.newBody.Price}
                 />
-              </div>
+              </Div2>
               <br></br>
-              <div>
                 <label htmlFor="Image">Image</label>
-                <textarea
+              <Div3>
+                <input
                   id="Image"
-                  type="file"
+                  type="text"
                   name="Image"
                   onChange={this.handleChange}
                   value={this.state.newBody.Image}
                 />
-              </div>
-              <button>New Car Body</button>
+              </Div3>
+              <Button>New Car Body</Button>
             </form>
+            
+            
 
       
         </div>
@@ -197,7 +216,7 @@ class bodyComp extends Component {
         </div>
         
         {/* <div class="sharethis-inline-share-buttons" /> */}
-      </Content2>
+      </div>
     );
   }
 }

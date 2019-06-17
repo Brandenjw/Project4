@@ -68,6 +68,13 @@ class Color extends Component {
     return (
       <div className="page">
         <Content2>
+        <div className="bodyNav">
+              <ul id="nav">
+                 <li><a href="/body">Body</a></li>
+                 <li><a href="/wheel">Wheels</a></li>
+                 <li><a href="/">Home</a></li>
+               </ul>
+             </div>
           <div>
             <Title> Stanced World </Title>
             <Title1>Design your very own stanced vehicle</Title1>
