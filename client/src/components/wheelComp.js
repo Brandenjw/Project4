@@ -6,22 +6,19 @@ import styled from "styled-components";
 
 
 const Title = styled.h1`
-  color: red;
+  color: white;
   text-align: center;
   font-size: 70px;
   text-decoration: underline;
-  box-shadow: 0px 0px 80px white;
+  font-family: 'cars';
+  /* box-shadow: 0px 0px 80px white; */
 `;
 const Title1 = styled.h1`
   color: red;
   text-align: center;
   font-size: 34px;
 `;
-const Title2 = styled.h1`
-  color: yellow;
-  text-align: center;
-  font-size: 34px;
-`;
+
 const Content = styled.div`
   background-repeat: no-repeat;
   padding-right: 90px;
@@ -41,13 +38,28 @@ const Content2 = styled.section`
 
 const Content5 = styled.section`
   display: flex;
-  justify-content: center;
   height: 50px;
   width: 100vw;
-  background-color: black;
-  border: solid blue;
-  text-align: center;
+color: black;
 `;
+
+
+const Div1 = styled.div`
+color:black;
+padding-top: 10px;
+`;
+const Div2 = styled.div`
+color:black;
+padding-top: 10px;
+`;
+const Div3 = styled.div`
+color:black;
+padding-top: 10px;
+padding-bottom:15px;
+`;
+
+
+
 
 
 class wheelComp extends Component {
@@ -116,7 +128,7 @@ class wheelComp extends Component {
              </div>
         <div>
           <Content>
-            <Title2>BETA MODE</Title2>
+            
             <Title> Stanced World </Title>
             <Title1>Design your very own stanced vehicle</Title1>
           </Content>
@@ -133,9 +145,7 @@ class wheelComp extends Component {
                     onClick={() => {
                       this.deleteWheel(wheel._id);
                     }}
-                  >
-                    Delete
-                  </button>
+                  >Delete</button>
                 </Content5>
                 {/* <Content1>Hello Ag</Content1> */}
 
@@ -146,7 +156,7 @@ class wheelComp extends Component {
           <label className="label" for="body-select">Choose a Wheel:</label>
 
           <form className="form" onSubmit={this.createWheel}>
-              <div>
+              <Div1>
                 <label htmlFor="Name"> Name of Wheels</label>
                 <textarea
                   id="Name"
@@ -155,9 +165,9 @@ class wheelComp extends Component {
                   onChange={this.handleChange}
                   value={this.state.newWheel.Name}
                 />
-              </div>
+              </Div1>
               <br></br>
-              <div>
+              <Div2>
                 <label htmlFor="Price">Price of Wheels</label>
                 <input
                   id="Price"
@@ -166,18 +176,18 @@ class wheelComp extends Component {
                   onChange={this.handleChange}
                   value={this.state.newWheel.Price}
                 />
-              </div>
+              </Div2>
               <br></br>
-              <div>
+              <Div3>
                 <label htmlFor="Image">Wheel Image</label>
                 <textarea
                   id="Image"
-                  type="file"
+                  type="text"
                   name="Image"
                   onChange={this.handleChange}
                   value={this.state.newWheel.Image}
                 />
-              </div>
+              </Div3>
               <button>New Car Body</button>
             </form>
 
@@ -188,7 +198,7 @@ class wheelComp extends Component {
             <option value="hamster">Hamster</option>
           </select> */}
         </div>
-        <div className="floor"></div>
+        
         <div className="weather">
         {this.state.weather && <div>{this.state.weather.name} <br></br> {this.state.weather.weather[0].description} </div>}
         </div>
