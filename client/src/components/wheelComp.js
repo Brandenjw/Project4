@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -28,12 +28,11 @@ const Content = styled.div`
 
 const Content2 = styled.section`
  
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   text-align: center;
   color: white;
   font-size: 30px;
-  border: solid red;
 `;
 
 const Content5 = styled.section`
@@ -147,9 +146,7 @@ class wheelComp extends Component {
                     }}
                   >Delete</button>
                 </Content5>
-                {/* <Content1>Hello Ag</Content1> */}
-
-                {/* <Content6 /> */}
+               
               </div>
             );
           })}
@@ -188,17 +185,12 @@ class wheelComp extends Component {
                   value={this.state.newWheel.Image}
                 />
               </Div3>
-              <button>New Car Body</button>
+              <button>Add Wheels</button>
             </form>
-
-          {/* <select id="body-select">
-            <option value="">--Please choose an option--</option>
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
-          </select> */}
         </div>
+        <Link className="link2" to="/finish">Hit The Streets</Link>
         
+        <h3>Local Weather</h3>
         <div className="weather">
         {this.state.weather && <div>{this.state.weather.name} <br></br> {this.state.weather.weather[0].description} </div>}
         </div>

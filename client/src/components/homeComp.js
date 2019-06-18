@@ -12,7 +12,7 @@ render() {
     return (
         <div className="homePic">
         <h1 className="head">Stanced World</h1>
-        <div className="starter">
+        <div className="sta">
     <Link className="link" to="/body">Start</Link>
     </div>
     </div>
