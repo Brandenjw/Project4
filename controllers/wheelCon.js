@@ -1,4 +1,4 @@
-const Bio = require('../models/wheelsApi')
+const wheel = require('../models/wheelsApi')
 
 
 

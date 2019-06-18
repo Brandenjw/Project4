@@ -28,10 +28,7 @@ const Content = styled.div`
   margin-left: 90px;
   text-align: center;
 `;
-// const Content1 = styled.div`
-//   border: solid red;
-//   background-color: blue;
-// `;
+
 const Content2 = styled.section`
  
   height: 100vh;

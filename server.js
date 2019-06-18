@@ -72,7 +72,7 @@ app.delete("/api/body/:bodyId", (req, res) => {
 // COLOR MODEL//
 ///////////////////////
 
-app.get("/api/color/:colorId", (req, res) => {
+app.get("/api/color", (req, res) => {
   colorApi.getAllColors().then(color => {
     res.send(color);
   });

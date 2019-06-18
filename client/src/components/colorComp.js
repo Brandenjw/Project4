@@ -3,40 +3,73 @@ import axios from "axios";
 // import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Title = styled.h1`
-  color: red;
+const Title3 = styled.h1`
+  color: white;
   text-align: center;
   font-size: 70px;
   text-decoration: underline;
   box-shadow: 0px 0px 80px white;
+  font-family: 'cars';
+  border: blue solid;
 `;
 const Title1 = styled.h1`
-  color: white;
+    color: red;
   text-align: center;
   font-size: 34px;
 `;
 const Content2 = styled.section`
-  background-color: black;
   text-align: center;
   color: white;
   font-size: 30px;
 `;
+const Content5 = styled.section`
+display: flex;
+  height: 50px;
+  width: 100vw;
+color: black;
+`;
+const Content = styled.div`
+  background-repeat: no-repeat;
+  padding-right: 90px;
+  margin-left: 90px;
+  text-align: center;
+`;
 
-class Color extends Component {
+
+const Div1 = styled.div`
+color:black;
+padding-top: 10px;
+`;
+const Div2 = styled.div`
+color:black;
+padding-top: 10px;
+`;
+const Button = styled.button`
+  color:black;
+  background-color: grey;
+  font-size: 18px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+`;
+
+
+
+
+class colorComp extends Component {
   state = {
     colors: [],
     newColor: {
-      id: "",
-      color: "",
-      price: ""
+      Price: "",
+      Image: ""
     },
-    isBodiesFormDisplayed: false
+    isColorsFormDisplayed: false
   };
 
   getAllColors = () => {
-    axios.get("/color").then(res => {
+    axios.get("/api/color").then(res => {
       console.log(res.data);
-      this.setState({ color: res.data });
+      this.setState({ colors: res.data });
     });
   };
   componentDidMount = () => {
@@ -56,15 +89,19 @@ class Color extends Component {
 
   createColor = e => {
     e.preventDefault();
-    axios.post("/color", this.state.newColor);
+    axios.post("/api/color", this.state.newColor);
+    console.log(this.state.newColor.Price, this.state.newColor.Image)
     this.getAllColors();
   };
   deleteColor = colorId => {
-    axios.delete(`/color/${colorId}`);
+    axios.delete(`/api/color/${colorId}`);
     this.getAllColors();
   };
 
   render() {
+    const bodyStyle = {
+      height: "200px"
+    };
     return (
       <div className="page">
         <Content2>
@@ -76,37 +113,53 @@ class Color extends Component {
                </ul>
              </div>
           <div>
-            <Title> Stanced World </Title>
+            <Content>
+            <Title3> Stanced World </Title3>
             <Title1>Design your very own stanced vehicle</Title1>
+            </Content>
+
             {this.state.colors.map(color => {
               return (
                 <div>
+                  <Content5>
                   {color.Id}
-                  {color.Color}
                   {color.Price}
+                  <img src={color.Image} style={bodyStyle} />
                   <button
                     onClick={() => {
                       this.deleteColor(color._id);
                     }}
-                  >
+                    >
                     Delete
                   </button>
+                  </Content5>
                 </div>
               );
             })}
-            <div>
-              <body>
-                <div class="wrap">
-                  <div className="half">
-                    <div class="colorSelect" />
-                  </div>
-                  <div class="half readout">
-                    <span class="title">Body Color:</span>
-                    <div id="values" />
-                  </div>
-                </div>
-              </body>
-            </div>
+                <form className="form" onSubmit={this.createColor}>
+                <label htmlFor="Price">Price of Color</label>
+              <Div1>
+                <input
+                  id="Price"
+                  type="text"
+                  name="Price"
+                  onChange={this.handleChange}
+                  value={this.state.newColor.Price}
+                />
+              </Div1>
+             
+                <label htmlFor="Image">Image</label>
+              <Div2>
+                <input
+                  id="Image"
+                  type="text"
+                  name="Image"
+                  onChange={this.handleChange}
+                  value={this.state.newColor.Image}
+                />
+              </Div2>
+              <Button>New Car Color</Button>
+            </form>
           </div>
           {/* <div class="sharethis-inline-share-buttons" /> */}
         </Content2>
@@ -115,4 +168,4 @@ class Color extends Component {
   }
 }
 
-export default Color;
+export default colorComp;

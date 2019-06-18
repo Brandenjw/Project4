@@ -3,9 +3,8 @@ const mongoose = require("../db/connection");
 
 const colorSchema = mongoose.Schema({
   //object that defines the type of values for each key
-  Id: String,
-  Color: String,
-  Price: Number
+  Price: Number,
+  Image: String
   
   
 });
