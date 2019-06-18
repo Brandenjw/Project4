@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Title3 = styled.h1`
@@ -159,6 +159,7 @@ class colorComp extends Component {
                 />
               </Div2>
               <Button>New Car Color</Button>
+            <Link to={`/wheel`}>NEXT</Link>
             </form>
           </div>
           {/* <div class="sharethis-inline-share-buttons" /> */}
