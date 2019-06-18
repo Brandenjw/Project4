@@ -10,7 +10,7 @@ const Title = styled.h1`
   text-align: center;
   font-size: 70px;
   text-decoration: underline;
-  box-shadow: 0px 0px 80px white;
+  /* box-shadow: 0px 0px 80px white; */
   font-family: 'cars';
   display: flex;
   flex-direction: column;

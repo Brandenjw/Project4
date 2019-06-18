@@ -22,7 +22,7 @@ class App extends Component {
     
     return (
       <Router>
-        <div>
+        <div className="wrapper">
         
            { <Switch>
             <Route exact path="/finish" component={finishComp}/>

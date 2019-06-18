@@ -31,7 +31,7 @@ const Content2 = styled.section`
   height: 100%;
   width: 100%;
   text-align: center;
-  color: white;
+  color: black;
   font-size: 30px;
 `;
 
